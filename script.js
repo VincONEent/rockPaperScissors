@@ -87,10 +87,10 @@ console.log(playRound(playerMove, computerMove));
 }while(computerScore < 2 || playerScore < 2);
 
 
-if(playerScore === 2){
+if(playerScore === 2){ //check if it is the player count that allowed the exit of the loop => player won
     console.log("The player won the best of 5");
 }
-else{
+else{ // else the computer win counter caused the exit, ence it won.
     console.log("The computer won the best of 5");
 }
 
