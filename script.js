@@ -26,24 +26,21 @@ function getComputerChoice(){
 
 function playRound(playerSelection, computerSelection){
 
-    let result = "abc"; // random declaration
+    let result = "Its a tie !"; // declaring a tie as the basis allow me to delete every tie event check, as if no-one won, its a tie
     let gameResult ="gdg";
     if(playerSelection.toLowerCase()=== "rock")
     {
-        if(computerSelection === "rock")
-        {
-            result = "Its a tie !";
-            //Its a tie
-        }
-        else if(computerSelection === "paper")
+        if(computerSelection === "paper")
         {
             //The computer won that round 
             result = "The computer won : paper beat rock !";
+            computerScore++;
         }
         else if(computerSelection === "cissors")
         {
             // the player won that round
             result = "The player won : rock beat cissors !";
+            playerScore++;
         }
     }
     else if(playerSelection.toLowerCase()=== "paper")
@@ -52,16 +49,13 @@ function playRound(playerSelection, computerSelection){
         {
             // the player won that round
             result = "The player won : paper beat rock !";
-        }
-        else if(computerSelection === "paper")
-        { 
-            result = "Its a tie !";
-            //Its a tie
+            playerScore++;
         }
         else if(computerSelection === "cissors")
         {
             //The computer won that round
             result = "The computer won : cissors beat paper !";
+            computerScore++;
         }
     }
     else if(playerSelection.toLowerCase()=== "cissors")
@@ -69,29 +63,34 @@ function playRound(playerSelection, computerSelection){
         if(computerSelection === "rock")
         {
             result = "The computer won : rock beat cissors";
+            computerScore++;
             // the computer won that round
         }
         else if(computerSelection === "paper")
         { 
             result ="The player won : cissors beat paper";
+            playerScore++;
             //the player won that round
         }
-        else if(computerSelection === "cissors")
-        {
-            result ="its a tie !";
-            //it's a tie
-        }
     }
-    gameResult = "The computer played : " + computerSelection +"\n" + "The player played : " + playerSelection + "\n" + result ;
+    gameResult = "The computer played : " + computerSelection +"\n" + "The player played : " + playerSelection + "\n" + result + "\n";
     return gameResult;
 }
 
-
+let computerScore = 0 ;
+let playerScore = 0 ;
+do{
 const playerMove = prompt("What is your play ?");
 const computerMove = getComputerChoice();
 
-
-console.log("the computer played : " + computerMove);
-console.log("the player played : " + playerMove);
-
 console.log(playRound(playerMove, computerMove));
+}while(computerScore < 2 || playerScore < 2);
+
+
+if(playerScore === 2){
+    console.log("The player won the best of 5");
+}
+else{
+    console.log("The computer won the best of 5");
+}
+
