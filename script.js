@@ -81,39 +81,19 @@ let computerScore = 0 ;
 let playerScore = 0 ;
 
 function oneRound(playerChoice){
+    let resultat ="";
     const computerMove = getComputerChoice();
-    console.log(playRound(playerChoice, computerMove));
+    resultat=playRound(playerChoice, computerMove);
+    Result.textContent= resultat;
+
 }
 
-/* Commented the play section to not get prompted while testing
-do{
-const playerMove = prompt("What is your play ?");
-const computerMove = getComputerChoice();
-
-console.log(playRound(playerMove, computerMove));
-}while(computerScore < 2 || playerScore < 2);
-
-
-if(playerScore === 2){ //check if it is the player count that allowed the exit of the loop => player won
-    console.log("The player won the best of 5");
-}
-else{ // else the computer win counter caused the exit, ence it won.
-    console.log("The computer won the best of 5");
-}
-
-
-*/
-
-
-
-
-function logText(){
-    console.log("paper was clicked !");
-}
-
+//Associating the JS to the the html file, to allow the javaScript to modify element of the html page
 const buttons= document.querySelector('#Buttons');
 const Games= document.querySelector('#Games');
 
+
+// Creating each indivual buttons
 const Paper = document.createElement('button');
 Paper.textContent = 'Paper';
 
@@ -123,12 +103,21 @@ Rock.textContent='Rock';
 const Cissors = document.createElement('button');
 Cissors.textContent='Cissors';
 
+// Apppending each button to the DIV associated to it in the html; the buttons will now appear
 buttons.appendChild(Rock);
 buttons.appendChild(Paper);
 buttons.appendChild(Cissors);
 
-const test = document.createElement('div');
-test.textContent='stp fonctionne';
+
+//Creationg the result part of the JS to display them in the html
+const Result = document.createElement('div');
+Result.textContent="The games hasn't started yet";
+
+Rock.addEventListener("click",(e) => oneRound('rock'));
+Paper.addEventListener("click",(e) => oneRound('paper'));
+Cissors.addEventListener("click",(e) => oneRound('cissors'));
 
 
-Games.appendChild(test);
+//Appending the rule in the display Games div available in the HTML
+Games.appendChild(Result);
+
