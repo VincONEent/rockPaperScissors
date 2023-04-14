@@ -79,6 +79,13 @@ function playRound(playerSelection, computerSelection){
 
 let computerScore = 0 ;
 let playerScore = 0 ;
+
+function oneRound(playerChoice){
+    const computerMove = getComputerChoice();
+    console.log(playRound(playerChoice, computerMove));
+}
+
+/* Commented the play section to not get prompted while testing
 do{
 const playerMove = prompt("What is your play ?");
 const computerMove = getComputerChoice();
@@ -93,4 +100,23 @@ if(playerScore === 2){ //check if it is the player count that allowed the exit o
 else{ // else the computer win counter caused the exit, ence it won.
     console.log("The computer won the best of 5");
 }
+
+
+
+
+const rock= document.querySelector("#rockButton");
+rock.addEventListener('click', fonction (e) => {
+    e.target.style.background = 'blue';
+});
+
+
+const cissors = document.querySelector("#cissorsButton");
+cissors.onclick = oneRound("cissors");
+*/
+function logText(){
+    console.log("paper was clicked !")
+}
+
+const rock = document.querySelector("#paperButton");
+rock.addEventListener('click',oneRound('rock'));
 
