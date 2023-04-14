@@ -102,21 +102,33 @@ else{ // else the computer win counter caused the exit, ence it won.
 }
 
 
-
-
-const rock= document.querySelector("#rockButton");
-rock.addEventListener('click', fonction (e) => {
-    e.target.style.background = 'blue';
-});
-
-
-const cissors = document.querySelector("#cissorsButton");
-cissors.onclick = oneRound("cissors");
 */
+
+
+
+
 function logText(){
-    console.log("paper was clicked !")
+    console.log("paper was clicked !");
 }
 
-const rock = document.querySelector("#paperButton");
-rock.addEventListener('click',oneRound('rock'));
+const buttons= document.querySelector('#Buttons');
+const Games= document.querySelector('#Games');
 
+const Paper = document.createElement('button');
+Paper.textContent = 'Paper';
+
+const Rock = document.createElement('button');
+Rock.textContent='Rock';
+
+const Cissors = document.createElement('button');
+Cissors.textContent='Cissors';
+
+buttons.appendChild(Rock);
+buttons.appendChild(Paper);
+buttons.appendChild(Cissors);
+
+const test = document.createElement('div');
+test.textContent='stp fonctionne';
+
+
+Games.appendChild(test);
