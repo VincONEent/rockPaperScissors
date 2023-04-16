@@ -1,0 +1,66 @@
+
+.firstButton, .secondButton, .thirdButton{
+    font-size : 25px;
+    width : 150px;
+    height : 100px;
+    margin : 20px;
+}
+
+.game_area{
+    background: rgba(206, 183, 140, 0.432);
+    border: 4px solid midnightblue;
+    width: 700px;
+    height: 600px;
+    display : flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.header{
+    height : 50px;
+    font-size : 40px;
+    font-weight: bold;
+    color : red;
+}
+
+.score_area{
+    display : flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.score_player , .nbr_round, .score_computer{
+    width : 170px;
+    height : 150px;
+    font-size : 30px;
+    margin : 20px;
+    border : 2px solid black;
+    
+}
+
+.score_player{
+    background-color: chartreuse;
+    justify-content: center;
+    align-items: center;
+}
+
+.nbr_round{
+    background-color: aqua;
+}
+
+.score_computer{
+    background-color: darksalmon;
+}
+
+
+.annoncement{
+    font-size: 35px;
+    height : 100px;
+}
+
+.restart{
+    height : 120px;
+    width : 200px;
+    font-size : 25px;
+}

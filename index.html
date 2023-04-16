@@ -1,28 +1,36 @@
 <!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Rock paper cissors</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="game_area">
 
-<head>
-    <meta charset="UTF8">
-    <title>Rock Paper Cisssors</title>
-    <!--The best pratice way of adding JavaScript : sourcing an outside js file-->
+            <div class="header">Pierre papier ciseau</div>
 
-</head>
-<!-- First way to add the javaScript
-<script>
-    console.log("Hello World");
-</script>
--->
-<body>
-    <!-- Second way to add the javaScript => inside 
-        the body or the head works either way
-    <script>
-        console.log("Hello World");
-    </script>
-    -->
-    <div><strong>CHOOSE YOUR PLAY</strong></div>
-    <div id="Buttons"></div>
-    <div id="Games"></div>
+            <div class="selectors">
+                <button class="firstButton" id="rockSelection">Pierre</button>
+                <button class="secondButton" id="paperSelection">Papier</button>
+                <button class ="thirdButton" id="scissorsSelection">Ciseau</button>
+            </div>
+
+            <div class="score_area">
+                <div class ="score_player" id="joueur">Score du joueur : 0</div>
+                <div class ="nbr_round" id="manche">Nombre de round : 0</div>
+                <div class="score_computer" id="ordinateur">Score de l'adversaire : 0</div>
+            </div>
+
+            <div class="annoncement" id="resultat">La partie n'a pas encore commence</div>
+
+            <div class="rematch">
+                <button class="restart" id="reStart">Recommencer</button>
+            </div>
 
 
-    <script src="script.js" defer></script>
+        </div>
 
-</body>
+        <script src ="script.js"></script>
+    </body>
+</html>
